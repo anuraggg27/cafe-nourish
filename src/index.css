@@ -1,0 +1,132 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #F8F6F1;
+  --color-primary: #24352A;
+  --color-sage: #8FA58C;
+  --color-cream: #EFE9DD;
+  --color-accent: #C87941;
+  --color-white: #FFFFFF;
+  --color-text: #263029;
+  --color-muted: #6F776F;
+
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #F8F6F1;
+    color: #263029;
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#24352A] text-white text-sm font-medium transition-all duration-200 hover:bg-[#1a2820] hover:shadow-lg hover:-translate-y-0.5;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-full border border-[#24352A] text-[#24352A] text-sm font-medium transition-all duration-200 hover:bg-[#24352A] hover:text-white;
+  }
+
+  .btn-accent {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#C87941] text-white text-sm font-medium transition-all duration-200 hover:bg-[#b36b35] hover:shadow-lg hover:-translate-y-0.5;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1;
+  }
+
+  .section-label {
+    @apply text-xs font-semibold tracking-[0.15em] uppercase text-[#8FA58C];
+  }
+
+  .tag {
+    @apply inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium;
+  }
+
+  .tag-plant {
+    @apply bg-[#eaf2ea] text-[#24352A];
+  }
+
+  .tag-fresh {
+    @apply bg-[#fef3e8] text-[#C87941];
+  }
+
+  .tag-nourish {
+    @apply bg-[#EFE9DD] text-[#6F776F];
+  }
+
+  .tag-protein {
+    @apply bg-[#e8f0ef] text-[#2a4a47];
+  }
+}
+
+/* Fonts loaded via index.html <link> for optimal performance */
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F8F6F1;
+}
+::-webkit-scrollbar-thumb {
+  background: #8FA58C;
+  border-radius: 3px;
+}
+
+/* Smooth image zoom on card hover */
+.food-card-img {
+  transition: transform 0.4s ease;
+}
+.food-card-img:hover {
+  transform: scale(1.03);
+}
+
+/* Typing animation */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+.typing-cursor::after {
+  content: '|';
+  animation: blink 1s step-end infinite;
+}
+
+/* Fade-in-up for page loads */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease forwards;
+}
+.animate-delay-100 { animation-delay: 0.1s; }
+.animate-delay-200 { animation-delay: 0.2s; }
+.animate-delay-300 { animation-delay: 0.3s; }
+.animate-delay-400 { animation-delay: 0.4s; }
