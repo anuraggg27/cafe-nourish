@@ -10,7 +10,7 @@ const footerLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#24352A] text-white">
+    <footer className="bg-[#26382C] text-white">
       <div className="max-w-7xl mx-auto px-6 py-16">
         {/* Top row */}
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-10 pb-12 border-b border-white/10">

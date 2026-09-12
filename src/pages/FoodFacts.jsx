@@ -45,8 +45,8 @@ const sources = [
     title: 'Dietary Guidelines for Indians',
     url: 'https://www.nin.res.in/downloads/DietaryGuidelinesforNINwebsite.pdf',
     color: 'bg-[#eaf2ea]',
-    borderColor: 'border-[#24352A]/10',
-    logoBg: 'bg-[#24352A]',
+    borderColor: 'border-[#26382C]/10',
+    logoBg: 'bg-[#26382C]',
     year: '2011',
     keyLearnings: [
       'Consume a diverse range of food groups daily including cereals, pulses, vegetables and fruits',
@@ -70,8 +70,8 @@ const sources = [
     title: 'Eat Right India',
     url: 'https://eatrightindia.gov.in/',
     color: 'bg-[#fef3e8]',
-    borderColor: 'border-[#C87941]/10',
-    logoBg: 'bg-[#C87941]',
+    borderColor: 'border-[#C77A45]/10',
+    logoBg: 'bg-[#C77A45]',
     year: '2018–present',
     keyLearnings: [
       'Support informed food choices through transparent ingredient information',
@@ -136,31 +136,31 @@ function SourceCard({ source }) {
               {source.logo}
             </span>
             <div>
-              <p className="text-xs text-[#6F776F] mb-0.5">{source.fullName}</p>
-              <p className="text-xs text-[#6F776F]">{source.year}</p>
+              <p className="text-xs text-[#707870] mb-0.5">{source.fullName}</p>
+              <p className="text-xs text-[#707870]">{source.year}</p>
             </div>
           </div>
           <a
             href={source.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1 text-xs text-[#6F776F] hover:text-[#24352A] transition-colors shrink-0"
+            className="flex items-center gap-1 text-xs text-[#707870] hover:text-[#26382C] transition-colors shrink-0"
           >
             Read source <ExternalLink size={11} />
           </a>
         </div>
 
-        <h3 className="font-serif text-[#24352A] text-2xl mb-4">{source.title}</h3>
-        <blockquote className="border-l-2 border-[#8FA58C] pl-4 text-sm text-[#6F776F] italic leading-relaxed mb-6">
+        <h3 className="font-serif text-[#26382C] text-2xl mb-4">{source.title}</h3>
+        <blockquote className="border-l-2 border-[#91A38E] pl-4 text-sm text-[#707870] italic leading-relaxed mb-6">
           "{source.quote}"
         </blockquote>
 
         <div className="mb-5">
-          <p className="text-xs font-semibold tracking-widest uppercase text-[#8FA58C] mb-3">What we learned</p>
+          <p className="text-xs font-semibold tracking-widest uppercase text-[#91A38E] mb-3">What we learned</p>
           <ul className="space-y-2">
             {source.keyLearnings.map((item, i) => (
-              <li key={i} className="flex items-start gap-2 text-sm text-[#263029]">
-                <CheckCircle2 size={14} className="text-[#8FA58C] mt-0.5 shrink-0" />
+              <li key={i} className="flex items-start gap-2 text-sm text-[#26302A]">
+                <CheckCircle2 size={14} className="text-[#91A38E] mt-0.5 shrink-0" />
                 {item}
               </li>
             ))}
@@ -169,7 +169,7 @@ function SourceCard({ source }) {
 
         <button
           onClick={() => setOpen(!open)}
-          className="flex items-center gap-2 text-sm text-[#24352A] font-medium hover:opacity-70 transition-opacity"
+          className="flex items-center gap-2 text-sm text-[#26382C] font-medium hover:opacity-70 transition-opacity"
         >
           {open ? 'Hide' : 'Show'} how we used this source
           {open ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
@@ -187,11 +187,11 @@ function SourceCard({ source }) {
             className="overflow-hidden"
           >
             <div className="bg-white/60 px-8 py-6 border-t border-white/40">
-              <p className="text-xs font-semibold tracking-widest uppercase text-[#8FA58C] mb-3">How we used it</p>
+              <p className="text-xs font-semibold tracking-widest uppercase text-[#91A38E] mb-3">How we used it</p>
               <ul className="space-y-2">
                 {source.howWeUsedIt.map((item, i) => (
-                  <li key={i} className="flex items-start gap-2 text-sm text-[#263029]">
-                    <ArrowRight size={12} className="text-[#C87941] mt-0.5 shrink-0" />
+                  <li key={i} className="flex items-start gap-2 text-sm text-[#26302A]">
+                    <ArrowRight size={12} className="text-[#C77A45] mt-0.5 shrink-0" />
                     {item}
                   </li>
                 ))}
@@ -206,16 +206,16 @@ function SourceCard({ source }) {
 
 export default function FoodFacts() {
   return (
-    <main className="min-h-screen bg-[#F8F6F1] pt-16">
+    <main className="min-h-screen bg-[#F7F5EF] pt-16">
       {/* ── Hero ──────────────────────────────────────────────────────────── */}
-      <section className="bg-white border-b border-[#EFE9DD] py-20">
+      <section className="bg-white border-b border-[#EDE6D8] py-20">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div initial="hidden" animate="show" variants={stagger}>
             <motion.p variants={fadeUp} className="section-label mb-4">Food Facts</motion.p>
-            <motion.h1 variants={fadeUp} className="font-serif text-[#24352A] text-5xl md:text-6xl mb-5 max-w-2xl">
+            <motion.h1 variants={fadeUp} className="font-serif text-[#26382C] text-5xl md:text-6xl mb-5 max-w-2xl">
               Food, backed by evidence.
             </motion.h1>
-            <motion.p variants={fadeUp} className="text-[#6F776F] text-lg max-w-xl leading-relaxed">
+            <motion.p variants={fadeUp} className="text-[#707870] text-lg max-w-xl leading-relaxed">
               We don't expect you to trust an AI-generated answer. We check it. Every principle behind our menu comes from a named, publicly available source.
             </motion.p>
           </motion.div>
@@ -240,7 +240,7 @@ export default function FoodFacts() {
       </section>
 
       {/* ── Trust but Verify ──────────────────────────────────────────────── */}
-      <section className="bg-white py-20 border-t border-[#EFE9DD]">
+      <section className="bg-white py-20 border-t border-[#EDE6D8]">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
             initial="hidden"
@@ -249,10 +249,10 @@ export default function FoodFacts() {
             variants={stagger}
           >
             <motion.p variants={fadeUp} className="section-label mb-4">Trust but Verify</motion.p>
-            <motion.h2 variants={fadeUp} className="font-serif text-[#24352A] text-4xl md:text-5xl mb-4 max-w-2xl">
+            <motion.h2 variants={fadeUp} className="font-serif text-[#26382C] text-4xl md:text-5xl mb-4 max-w-2xl">
               AI said it.<br />We checked it.
             </motion.h2>
-            <motion.p variants={fadeUp} className="text-[#6F776F] text-base max-w-xl leading-relaxed mb-14">
+            <motion.p variants={fadeUp} className="text-[#707870] text-base max-w-xl leading-relaxed mb-14">
               Here are four real examples of AI-generated claims we reviewed, what we found when we checked them, and what we changed.
             </motion.p>
 
@@ -262,30 +262,30 @@ export default function FoodFacts() {
                   key={i}
                   variants={fadeUp}
                   custom={i}
-                  className="bg-[#F8F6F1] rounded-3xl overflow-hidden"
+                  className="bg-[#F7F5EF] rounded-3xl overflow-hidden"
                 >
-                  <div className="grid lg:grid-cols-3 divide-y lg:divide-y-0 lg:divide-x divide-[#EFE9DD]">
+                  <div className="grid lg:grid-cols-3 divide-y lg:divide-y-0 lg:divide-x divide-[#EDE6D8]">
                     {/* AI said */}
                     <div className="p-7">
                       <div className="flex items-center gap-2 mb-4">
-                        <span className="w-6 h-6 rounded-full bg-[#C87941]/15 flex items-center justify-center">
-                          <span className="text-xs font-bold text-[#C87941]">AI</span>
+                        <span className="w-6 h-6 rounded-full bg-[#C77A45]/15 flex items-center justify-center">
+                          <span className="text-xs font-bold text-[#C77A45]">AI</span>
                         </span>
-                        <p className="text-xs font-semibold tracking-widest uppercase text-[#C87941]">AI said</p>
+                        <p className="text-xs font-semibold tracking-widest uppercase text-[#C77A45]">AI said</p>
                       </div>
-                      <p className="text-sm text-[#263029] italic leading-relaxed">{ex.aiSaid}</p>
+                      <p className="text-sm text-[#26302A] italic leading-relaxed">{ex.aiSaid}</p>
                     </div>
 
                     {/* We checked */}
                     <div className="p-7">
                       <div className="flex items-center gap-2 mb-4">
-                        <span className="w-6 h-6 rounded-full bg-[#8FA58C]/20 flex items-center justify-center">
+                        <span className="w-6 h-6 rounded-full bg-[#91A38E]/20 flex items-center justify-center">
                           <span className="text-xs">🔍</span>
                         </span>
-                        <p className="text-xs font-semibold tracking-widest uppercase text-[#8FA58C]">We checked</p>
+                        <p className="text-xs font-semibold tracking-widest uppercase text-[#91A38E]">We checked</p>
                       </div>
-                      <p className="text-xs text-[#6F776F] mb-2 font-medium">Source: {ex.weChecked}</p>
-                      <p className="text-sm text-[#263029] leading-relaxed">{ex.found}</p>
+                      <p className="text-xs text-[#707870] mb-2 font-medium">Source: {ex.weChecked}</p>
+                      <p className="text-sm text-[#26302A] leading-relaxed">{ex.found}</p>
                     </div>
 
                     {/* We changed */}
@@ -293,17 +293,17 @@ export default function FoodFacts() {
                       <div className="flex items-center gap-2 mb-4">
                         {ex.status === 'removed' ? (
                           <>
-                            <XCircle size={16} className="text-[#24352A]" />
-                            <p className="text-xs font-semibold tracking-widest uppercase text-[#24352A]">Removed</p>
+                            <XCircle size={16} className="text-[#26382C]" />
+                            <p className="text-xs font-semibold tracking-widest uppercase text-[#26382C]">Removed</p>
                           </>
                         ) : (
                           <>
-                            <CheckCircle2 size={16} className="text-[#24352A]" />
-                            <p className="text-xs font-semibold tracking-widest uppercase text-[#24352A]">We changed it to</p>
+                            <CheckCircle2 size={16} className="text-[#26382C]" />
+                            <p className="text-xs font-semibold tracking-widest uppercase text-[#26382C]">We changed it to</p>
                           </>
                         )}
                       </div>
-                      <p className="text-sm text-[#263029] leading-relaxed font-medium">{ex.weChanged}</p>
+                      <p className="text-sm text-[#26302A] leading-relaxed font-medium">{ex.weChanged}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -314,11 +314,11 @@ export default function FoodFacts() {
       </section>
 
       {/* ── Bottom CTA ────────────────────────────────────────────────────── */}
-      <section className="bg-[#F8F6F1] py-16 border-t border-[#EFE9DD]">
+      <section className="bg-[#F7F5EF] py-16 border-t border-[#EDE6D8]">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
           <div>
-            <p className="font-serif text-[#24352A] text-2xl mb-2">Curious how we used AI?</p>
-            <p className="text-[#6F776F] text-sm">See the full AI decision log, human overrides and our responsible AI principles.</p>
+            <p className="font-serif text-[#26382C] text-2xl mb-2">Curious how we used AI?</p>
+            <p className="text-[#707870] text-sm">See the full AI decision log, human overrides and our responsible AI principles.</p>
           </div>
           <div className="flex gap-3 shrink-0">
             <Link to="/approach" className="btn-primary">

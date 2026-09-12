@@ -53,16 +53,16 @@ const timeline = [
 
 export default function About() {
   return (
-    <main className="min-h-screen bg-[#F8F6F1] pt-16">
+    <main className="min-h-screen bg-[#F7F5EF] pt-16">
       {/* ── Hero ──────────────────────────────────────────────────────────── */}
-      <section className="bg-white border-b border-[#EFE9DD] py-20">
+      <section className="bg-white border-b border-[#EDE6D8] py-20">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div initial="hidden" animate="show" variants={stagger}>
             <motion.p variants={fadeUp} className="section-label mb-4">About</motion.p>
-            <motion.h1 variants={fadeUp} className="font-serif text-[#24352A] text-5xl md:text-6xl mb-6 max-w-2xl leading-tight">
+            <motion.h1 variants={fadeUp} className="font-serif text-[#26382C] text-5xl md:text-6xl mb-6 max-w-2xl leading-tight">
               More than a café.
             </motion.h1>
-            <motion.p variants={fadeUp} className="text-[#6F776F] text-lg max-w-2xl leading-relaxed">
+            <motion.p variants={fadeUp} className="text-[#707870] text-lg max-w-2xl leading-relaxed">
               Café Nourish was created as part of an AI project exploring how technology can support better everyday food choices — without replacing human judgment, inventing health claims, or pretending to be something it isn't.
             </motion.p>
           </motion.div>
@@ -82,10 +82,10 @@ export default function About() {
             {/* Text */}
             <div>
               <motion.p variants={fadeUp} className="section-label mb-4">The idea</motion.p>
-              <motion.h2 variants={fadeUp} className="font-serif text-[#24352A] text-4xl mb-6">
+              <motion.h2 variants={fadeUp} className="font-serif text-[#26382C] text-4xl mb-6">
                 A concept born from a question.
               </motion.h2>
-              <motion.div variants={stagger} className="space-y-4 text-[#6F776F] text-base leading-relaxed">
+              <motion.div variants={stagger} className="space-y-4 text-[#707870] text-base leading-relaxed">
                 <motion.p variants={fadeUp}>
                   What would a student café look like if it was designed around transparency, balance and evidence — rather than marketing language and vague wellness claims?
                 </motion.p>
@@ -101,14 +101,14 @@ export default function About() {
             {/* Image */}
             <motion.div
               variants={fadeUp}
-              className="relative rounded-3xl overflow-hidden aspect-[4/3] bg-[#EFE9DD] shadow-lg"
+              className="relative rounded-3xl overflow-hidden aspect-[4/3] bg-[#EDE6D8] shadow-lg"
             >
               <img
                 src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&auto=format&fit=crop"
                 alt="Café interior"
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#24352A]/40 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#26382C]/40 to-transparent" />
               <div className="absolute bottom-6 left-6">
                 <p className="text-white font-serif text-xl">Café Nourish</p>
                 <p className="text-white/70 text-sm">Good food. Better choices.</p>
@@ -119,7 +119,7 @@ export default function About() {
       </section>
 
       {/* ── Principles ────────────────────────────────────────────────────── */}
-      <section className="bg-white py-20 border-t border-[#EFE9DD]">
+      <section className="bg-white py-20 border-t border-[#EDE6D8]">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
             initial="hidden"
@@ -128,7 +128,7 @@ export default function About() {
             variants={stagger}
           >
             <motion.p variants={fadeUp} className="section-label mb-4">Our Principles</motion.p>
-            <motion.h2 variants={fadeUp} className="font-serif text-[#24352A] text-4xl md:text-5xl mb-14 max-w-xl">
+            <motion.h2 variants={fadeUp} className="font-serif text-[#26382C] text-4xl md:text-5xl mb-14 max-w-xl">
               What guides every decision.
             </motion.h2>
 
@@ -138,10 +138,10 @@ export default function About() {
                   key={p.title}
                   variants={fadeUp}
                   custom={i}
-                  className="p-8 bg-[#F8F6F1] rounded-2xl hover:bg-[#EFE9DD] transition-colors duration-300"
+                  className="p-8 bg-[#F7F5EF] rounded-2xl hover:bg-[#EDE6D8] transition-colors duration-300"
                 >
-                  <h3 className="font-serif text-[#24352A] text-xl mb-3">{p.title}</h3>
-                  <p className="text-sm text-[#6F776F] leading-relaxed">{p.body}</p>
+                  <h3 className="font-serif text-[#26382C] text-xl mb-3">{p.title}</h3>
+                  <p className="text-sm text-[#707870] leading-relaxed">{p.body}</p>
                 </motion.div>
               ))}
             </div>
@@ -150,7 +150,7 @@ export default function About() {
       </section>
 
       {/* ── Team ──────────────────────────────────────────────────────────── */}
-      <section className="py-20 border-t border-[#EFE9DD]">
+      <section className="py-20 border-t border-[#EDE6D8]">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
             initial="hidden"
@@ -159,10 +159,10 @@ export default function About() {
             variants={stagger}
           >
             <motion.p variants={fadeUp} className="section-label mb-4">The Team</motion.p>
-            <motion.h2 variants={fadeUp} className="font-serif text-[#24352A] text-4xl md:text-5xl mb-4 max-w-xl">
+            <motion.h2 variants={fadeUp} className="font-serif text-[#26382C] text-4xl md:text-5xl mb-4 max-w-xl">
               Six people. One café.
             </motion.h2>
-            <motion.p variants={fadeUp} className="text-[#6F776F] text-base leading-relaxed max-w-xl mb-12">
+            <motion.p variants={fadeUp} className="text-[#707870] text-base leading-relaxed max-w-xl mb-12">
               Each member owns a distinct role, but the viva is individual — everyone understands the full project.
             </motion.p>
 
@@ -174,12 +174,12 @@ export default function About() {
                   custom={i}
                   className="bg-white p-6 rounded-2xl hover:shadow-md transition-all duration-300"
                 >
-                  <div className="w-10 h-10 rounded-full bg-[#EFE9DD] flex items-center justify-center mb-4">
-                    <span className="text-sm font-semibold text-[#24352A]">{i + 1}</span>
+                  <div className="w-10 h-10 rounded-full bg-[#EDE6D8] flex items-center justify-center mb-4">
+                    <span className="text-sm font-semibold text-[#26382C]">{i + 1}</span>
                   </div>
-                  <p className="text-xs font-semibold tracking-widest uppercase text-[#8FA58C] mb-1">{member.role}</p>
-                  <p className="font-semibold text-[#263029] mb-2">{member.name}</p>
-                  <p className="text-sm text-[#6F776F] leading-relaxed">{member.focus}</p>
+                  <p className="text-xs font-semibold tracking-widest uppercase text-[#91A38E] mb-1">{member.role}</p>
+                  <p className="font-semibold text-[#26302A] mb-2">{member.name}</p>
+                  <p className="text-sm text-[#707870] leading-relaxed">{member.focus}</p>
                 </motion.div>
               ))}
             </div>
@@ -188,7 +188,7 @@ export default function About() {
       </section>
 
       {/* ── Timeline ──────────────────────────────────────────────────────── */}
-      <section className="bg-white py-20 border-t border-[#EFE9DD]">
+      <section className="bg-white py-20 border-t border-[#EDE6D8]">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
             initial="hidden"
@@ -197,13 +197,13 @@ export default function About() {
             variants={stagger}
           >
             <motion.p variants={fadeUp} className="section-label mb-4">Project Timeline</motion.p>
-            <motion.h2 variants={fadeUp} className="font-serif text-[#24352A] text-4xl mb-12 max-w-xl">
+            <motion.h2 variants={fadeUp} className="font-serif text-[#26382C] text-4xl mb-12 max-w-xl">
               13 days. One working product.
             </motion.h2>
 
             <div className="relative">
               {/* Vertical line */}
-              <div className="absolute left-[18px] top-0 bottom-0 w-px bg-[#EFE9DD] hidden sm:block" />
+              <div className="absolute left-[18px] top-0 bottom-0 w-px bg-[#EDE6D8] hidden sm:block" />
               <div className="space-y-4">
                 {timeline.map((item, i) => (
                   <motion.div
@@ -212,12 +212,12 @@ export default function About() {
                     custom={i}
                     className="flex gap-6 items-start"
                   >
-                    <div className="w-9 h-9 rounded-full bg-[#24352A] flex items-center justify-center shrink-0 relative z-10">
+                    <div className="w-9 h-9 rounded-full bg-[#26382C] flex items-center justify-center shrink-0 relative z-10">
                       <span className="text-xs font-bold text-white">{i + 1}</span>
                     </div>
                     <div className="flex-1 pb-4">
-                      <p className="text-xs font-semibold tracking-widest uppercase text-[#8FA58C] mb-1">{item.day}</p>
-                      <p className="text-sm text-[#263029] leading-relaxed">{item.task}</p>
+                      <p className="text-xs font-semibold tracking-widest uppercase text-[#91A38E] mb-1">{item.day}</p>
+                      <p className="text-sm text-[#26302A] leading-relaxed">{item.task}</p>
                     </div>
                   </motion.div>
                 ))}
@@ -228,7 +228,7 @@ export default function About() {
       </section>
 
       {/* ── Visit / Contact ───────────────────────────────────────────────── */}
-      <section className="bg-[#24352A] py-20">
+      <section className="bg-[#26382C] py-20">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
             initial="hidden"
@@ -238,7 +238,7 @@ export default function About() {
             className="grid md:grid-cols-2 gap-12 items-center"
           >
             <div>
-              <motion.p variants={fadeUp} className="section-label text-[#8FA58C] mb-4">Visit us</motion.p>
+              <motion.p variants={fadeUp} className="section-label text-[#91A38E] mb-4">Visit us</motion.p>
               <motion.h2 variants={fadeUp} className="font-serif text-white text-4xl mb-6">
                 Come say hello.
               </motion.h2>

@@ -65,11 +65,11 @@ const integrityLog = [
 ];
 
 const tagStyles = {
-  accepted: 'bg-[#eaf2ea] text-[#24352A]',
+  accepted: 'bg-[#eaf2ea] text-[#26382C]',
   revised: 'bg-[#e8f0ef] text-[#2a4a47]',
-  rejected: 'bg-[#fef3e8] text-[#C87941]',
-  override: 'bg-[#EFE9DD] text-[#6F776F]',
-  safety: 'bg-[#24352A] text-white',
+  rejected: 'bg-[#fef3e8] text-[#C77A45]',
+  override: 'bg-[#EDE6D8] text-[#707870]',
+  safety: 'bg-[#26382C] text-white',
 };
 
 // ─── Human override comparison ───────────────────────────────────────────────
@@ -125,16 +125,16 @@ const principles = [
 
 export default function Approach() {
   return (
-    <main className="min-h-screen bg-[#F8F6F1] pt-16">
+    <main className="min-h-screen bg-[#F7F5EF] pt-16">
       {/* ── Hero ──────────────────────────────────────────────────────────── */}
-      <section className="bg-white border-b border-[#EFE9DD] py-20">
+      <section className="bg-white border-b border-[#EDE6D8] py-20">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div initial="hidden" animate="show" variants={stagger}>
             <motion.p variants={fadeUp} className="section-label mb-4">Our Approach</motion.p>
-            <motion.h1 variants={fadeUp} className="font-serif text-[#24352A] text-5xl md:text-6xl mb-5 max-w-2xl">
+            <motion.h1 variants={fadeUp} className="font-serif text-[#26382C] text-5xl md:text-6xl mb-5 max-w-2xl">
               AI generates.<br />Evidence verifies.<br />Humans decide.
             </motion.h1>
-            <motion.p variants={fadeUp} className="text-[#6F776F] text-lg max-w-xl leading-relaxed">
+            <motion.p variants={fadeUp} className="text-[#707870] text-lg max-w-xl leading-relaxed">
               This is the single principle behind every decision we made — from menu design to the AI meal finder to the way we write about food.
             </motion.p>
           </motion.div>
@@ -151,31 +151,31 @@ export default function Approach() {
             variants={stagger}
           >
             <motion.p variants={fadeUp} className="section-label mb-4">Human Override</motion.p>
-            <motion.h2 variants={fadeUp} className="font-serif text-[#24352A] text-4xl md:text-5xl mb-4 max-w-xl">
+            <motion.h2 variants={fadeUp} className="font-serif text-[#26382C] text-4xl md:text-5xl mb-4 max-w-xl">
               AI suggested. We chose differently.
             </motion.h2>
-            <motion.p variants={fadeUp} className="text-[#6F776F] text-base leading-relaxed max-w-xl mb-14">
+            <motion.p variants={fadeUp} className="text-[#707870] text-base leading-relaxed max-w-xl mb-14">
               When we asked the AI for menu ideas, it returned a Western-biased list of premium ingredients. We rejected it. Our target users are students — we needed affordability, familiarity and practical availability.
             </motion.p>
 
             <motion.div variants={fadeUp} className="bg-white rounded-3xl overflow-hidden shadow-sm">
-              <div className="grid lg:grid-cols-2 divide-y lg:divide-y-0 lg:divide-x divide-[#EFE9DD]">
+              <div className="grid lg:grid-cols-2 divide-y lg:divide-y-0 lg:divide-x divide-[#EDE6D8]">
                 {/* AI suggested */}
                 <div className="p-10">
                   <div className="flex items-center gap-2 mb-6">
-                    <span className="w-7 h-7 rounded-full bg-[#C87941]/15 flex items-center justify-center">
-                      <span className="text-xs font-bold text-[#C87941]">AI</span>
+                    <span className="w-7 h-7 rounded-full bg-[#C77A45]/15 flex items-center justify-center">
+                      <span className="text-xs font-bold text-[#C77A45]">AI</span>
                     </span>
-                    <p className="text-xs font-semibold tracking-widest uppercase text-[#C87941]">AI suggested</p>
+                    <p className="text-xs font-semibold tracking-widest uppercase text-[#C77A45]">AI suggested</p>
                   </div>
                   <ul className="space-y-4">
                     {aiSuggested.map(item => (
                       <li key={item.label} className="flex items-center justify-between">
-                        <span className="flex items-center gap-3 text-sm text-[#263029]">
+                        <span className="flex items-center gap-3 text-sm text-[#26302A]">
                           <span className="text-lg">{item.emoji}</span>
                           {item.label}
                         </span>
-                        <span className="text-xs text-[#C87941] bg-[#fef3e8] px-2.5 py-1 rounded-full">
+                        <span className="text-xs text-[#C77A45] bg-[#fef3e8] px-2.5 py-1 rounded-full">
                           {item.note}
                         </span>
                       </li>
@@ -189,16 +189,16 @@ export default function Approach() {
                     <span className="w-7 h-7 rounded-full bg-[#eaf2ea] flex items-center justify-center">
                       <span className="text-xs">✓</span>
                     </span>
-                    <p className="text-xs font-semibold tracking-widest uppercase text-[#24352A]">We chose</p>
+                    <p className="text-xs font-semibold tracking-widest uppercase text-[#26382C]">We chose</p>
                   </div>
                   <ul className="space-y-4">
                     {weChose.map(item => (
                       <li key={item.label} className="flex items-center justify-between">
-                        <span className="flex items-center gap-3 text-sm text-[#263029]">
+                        <span className="flex items-center gap-3 text-sm text-[#26302A]">
                           <span className="text-lg">{item.emoji}</span>
                           {item.label}
                         </span>
-                        <span className="text-xs text-[#24352A] bg-[#eaf2ea] px-2.5 py-1 rounded-full">
+                        <span className="text-xs text-[#26382C] bg-[#eaf2ea] px-2.5 py-1 rounded-full">
                           {item.note}
                         </span>
                       </li>
@@ -208,9 +208,9 @@ export default function Approach() {
               </div>
 
               {/* Reason */}
-              <div className="bg-[#F8F6F1] px-10 py-6 border-t border-[#EFE9DD]">
-                <p className="text-xs font-semibold tracking-widest uppercase text-[#8FA58C] mb-2">Why?</p>
-                <p className="text-sm text-[#6F776F] leading-relaxed max-w-2xl">
+              <div className="bg-[#F7F5EF] px-10 py-6 border-t border-[#EDE6D8]">
+                <p className="text-xs font-semibold tracking-widest uppercase text-[#91A38E] mb-2">Why?</p>
+                <p className="text-sm text-[#707870] leading-relaxed max-w-2xl">
                   Our target users are students. We prioritised affordability, accessibility, familiarity and practical ingredient availability — factors the AI did not consider without being explicitly prompted.
                 </p>
               </div>
@@ -220,7 +220,7 @@ export default function Approach() {
       </section>
 
       {/* ── AI Integrity Log ──────────────────────────────────────────────── */}
-      <section className="bg-white py-20 border-t border-[#EFE9DD]">
+      <section className="bg-white py-20 border-t border-[#EDE6D8]">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
             initial="hidden"
@@ -229,35 +229,35 @@ export default function Approach() {
             variants={stagger}
           >
             <motion.p variants={fadeUp} className="section-label mb-4">AI Integrity Log</motion.p>
-            <motion.h2 variants={fadeUp} className="font-serif text-[#24352A] text-4xl md:text-5xl mb-4 max-w-xl">
+            <motion.h2 variants={fadeUp} className="font-serif text-[#26382C] text-4xl md:text-5xl mb-4 max-w-xl">
               Every AI use, documented.
             </motion.h2>
-            <motion.p variants={fadeUp} className="text-[#6F776F] text-base leading-relaxed max-w-xl mb-12">
+            <motion.p variants={fadeUp} className="text-[#707870] text-base leading-relaxed max-w-xl mb-12">
               We don't hide where AI was involved. Below is a simplified version of our AI use log. This directly informs our submission evidence.
             </motion.p>
 
             {/* Table */}
-            <motion.div variants={fadeUp} className="bg-[#F8F6F1] rounded-3xl overflow-hidden">
+            <motion.div variants={fadeUp} className="bg-[#F7F5EF] rounded-3xl overflow-hidden">
               {/* Header */}
-              <div className="hidden lg:grid grid-cols-4 gap-4 px-7 py-4 border-b border-[#EFE9DD]">
-                <p className="text-xs font-semibold tracking-widest uppercase text-[#8FA58C]">AI Use</p>
-                <p className="text-xs font-semibold tracking-widest uppercase text-[#8FA58C]">What happened</p>
-                <p className="text-xs font-semibold tracking-widest uppercase text-[#8FA58C]">Our outcome</p>
-                <p className="text-xs font-semibold tracking-widest uppercase text-[#8FA58C]">Decision</p>
+              <div className="hidden lg:grid grid-cols-4 gap-4 px-7 py-4 border-b border-[#EDE6D8]">
+                <p className="text-xs font-semibold tracking-widest uppercase text-[#91A38E]">AI Use</p>
+                <p className="text-xs font-semibold tracking-widest uppercase text-[#91A38E]">What happened</p>
+                <p className="text-xs font-semibold tracking-widest uppercase text-[#91A38E]">Our outcome</p>
+                <p className="text-xs font-semibold tracking-widest uppercase text-[#91A38E]">Decision</p>
               </div>
 
               {/* Rows */}
-              <div className="divide-y divide-[#EFE9DD]">
+              <div className="divide-y divide-[#EDE6D8]">
                 {integrityLog.map((row, i) => (
                   <motion.div
                     key={i}
                     variants={fadeUp}
                     custom={i}
-                    className="grid lg:grid-cols-4 gap-4 px-7 py-5 hover:bg-[#EFE9DD]/50 transition-colors"
+                    className="grid lg:grid-cols-4 gap-4 px-7 py-5 hover:bg-[#EDE6D8]/50 transition-colors"
                   >
-                    <p className="text-sm font-semibold text-[#263029]">{row.use}</p>
-                    <p className="text-sm text-[#6F776F] leading-relaxed">{row.what}</p>
-                    <p className="text-sm text-[#6F776F] leading-relaxed">{row.outcome}</p>
+                    <p className="text-sm font-semibold text-[#26302A]">{row.use}</p>
+                    <p className="text-sm text-[#707870] leading-relaxed">{row.what}</p>
+                    <p className="text-sm text-[#707870] leading-relaxed">{row.outcome}</p>
                     <div>
                       <span className={`inline-block text-xs font-medium px-3 py-1 rounded-full ${tagStyles[row.tag]}`}>
                         {row.decision}
@@ -268,7 +268,7 @@ export default function Approach() {
               </div>
             </motion.div>
 
-            <motion.p variants={fadeUp} className="text-xs text-[#6F776F] mt-4">
+            <motion.p variants={fadeUp} className="text-xs text-[#707870] mt-4">
               Full AI Integrity Log with timestamps and detailed evidence is available in the project submission documentation.
             </motion.p>
           </motion.div>
@@ -276,7 +276,7 @@ export default function Approach() {
       </section>
 
       {/* ── Responsible AI Principles ─────────────────────────────────────── */}
-      <section className="py-20 border-t border-[#EFE9DD]">
+      <section className="py-20 border-t border-[#EDE6D8]">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
             initial="hidden"
@@ -285,7 +285,7 @@ export default function Approach() {
             variants={stagger}
           >
             <motion.p variants={fadeUp} className="section-label mb-4">Our AI Promise</motion.p>
-            <motion.h2 variants={fadeUp} className="font-serif text-[#24352A] text-4xl md:text-5xl mb-14 max-w-xl">
+            <motion.h2 variants={fadeUp} className="font-serif text-[#26382C] text-4xl md:text-5xl mb-14 max-w-xl">
               Responsible AI, by design.
             </motion.h2>
 
@@ -298,8 +298,8 @@ export default function Approach() {
                   className="bg-white p-7 rounded-2xl hover:shadow-md transition-all duration-300"
                 >
                   <span className="text-3xl mb-4 block">{p.icon}</span>
-                  <h3 className="font-semibold text-[#24352A] text-base mb-2">{p.title}</h3>
-                  <p className="text-sm text-[#6F776F] leading-relaxed">{p.body}</p>
+                  <h3 className="font-semibold text-[#26382C] text-base mb-2">{p.title}</h3>
+                  <p className="text-sm text-[#707870] leading-relaxed">{p.body}</p>
                 </motion.div>
               ))}
             </div>
@@ -308,7 +308,7 @@ export default function Approach() {
       </section>
 
       {/* ── Architecture diagram ──────────────────────────────────────────── */}
-      <section className="bg-[#24352A] py-20">
+      <section className="bg-[#26382C] py-20">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
             initial="hidden"
@@ -316,7 +316,7 @@ export default function Approach() {
             viewport={{ once: true, amount: 0.2 }}
             variants={stagger}
           >
-            <motion.p variants={fadeUp} className="section-label text-[#8FA58C] mb-4">System Architecture</motion.p>
+            <motion.p variants={fadeUp} className="section-label text-[#91A38E] mb-4">System Architecture</motion.p>
             <motion.h2 variants={fadeUp} className="font-serif text-white text-3xl md:text-4xl mb-12 max-w-xl">
               How the AI works in our system.
             </motion.h2>
@@ -349,11 +349,11 @@ export default function Approach() {
       </section>
 
       {/* ── CTA ───────────────────────────────────────────────────────────── */}
-      <section className="bg-[#F8F6F1] py-16 border-t border-[#EFE9DD]">
+      <section className="bg-[#F7F5EF] py-16 border-t border-[#EDE6D8]">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
           <div>
-            <p className="font-serif text-[#24352A] text-2xl mb-2">See the evidence behind our menu</p>
-            <p className="text-[#6F776F] text-sm">WHO, ICMR–NIN and FSSAI — all checked, all linked.</p>
+            <p className="font-serif text-[#26382C] text-2xl mb-2">See the evidence behind our menu</p>
+            <p className="text-[#707870] text-sm">WHO, ICMR–NIN and FSSAI — all checked, all linked.</p>
           </div>
           <Link to="/food-facts" className="btn-primary shrink-0">
             Food Facts <ArrowRight size={14} />

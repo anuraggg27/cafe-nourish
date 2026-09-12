@@ -110,7 +110,7 @@ export default function AIAssistant() {
       {/* Floating button */}
       <button
         onClick={() => setOpen(true)}
-        className={`fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-[#24352A] text-white px-4 py-3 rounded-full shadow-xl hover:bg-[#1a2820] hover:shadow-2xl transition-all duration-200 hover:-translate-y-0.5 ${open ? 'hidden' : 'flex'}`}
+        className={`fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-[#26382C] text-white px-4 py-3 rounded-full shadow-xl hover:bg-[#1c2a20] hover:shadow-2xl transition-all duration-200 hover:-translate-y-0.5 ${open ? 'hidden' : 'flex'}`}
         aria-label="Open AI assistant"
       >
         <Bot size={18} />
@@ -119,10 +119,10 @@ export default function AIAssistant() {
 
       {/* Chat panel */}
       {open && (
-        <div className="fixed bottom-6 right-6 z-50 w-[360px] max-w-[calc(100vw-2rem)] bg-white rounded-2xl shadow-2xl flex flex-col overflow-hidden border border-[#EFE9DD]"
+        <div className="fixed bottom-6 right-6 z-50 w-[360px] max-w-[calc(100vw-2rem)] bg-white rounded-2xl shadow-2xl flex flex-col overflow-hidden border border-[#EDE6D8]"
           style={{ maxHeight: '520px' }}>
           {/* Header */}
-          <div className="flex items-center justify-between px-5 py-4 bg-[#24352A] text-white">
+          <div className="flex items-center justify-between px-5 py-4 bg-[#26382C] text-white">
             <div className="flex items-center gap-2">
               <Bot size={18} />
               <div>
@@ -136,9 +136,9 @@ export default function AIAssistant() {
           </div>
 
           {/* Safety disclaimer */}
-          <div className="bg-[#fef9f0] border-b border-[#EFE9DD] px-4 py-2 flex gap-2 items-start">
-            <AlertCircle size={13} className="text-[#C87941] mt-0.5 shrink-0" />
-            <p className="text-xs text-[#6F776F] leading-relaxed">
+          <div className="bg-[#fef9f0] border-b border-[#EDE6D8] px-4 py-2 flex gap-2 items-start">
+            <AlertCircle size={13} className="text-[#C77A45] mt-0.5 shrink-0" />
+            <p className="text-xs text-[#707870] leading-relaxed">
               Not medical advice. For health conditions, consult a professional.
             </p>
           </div>
@@ -150,10 +150,10 @@ export default function AIAssistant() {
                 <div
                   className={`max-w-[85%] rounded-2xl px-4 py-3 text-sm ${
                     msg.role === 'user'
-                      ? 'bg-[#24352A] text-white rounded-br-sm'
+                      ? 'bg-[#26382C] text-white rounded-br-sm'
                       : msg.isSafety
-                      ? 'bg-[#fef9f0] border border-[#C87941]/20 text-[#263029] rounded-bl-sm'
-                      : 'bg-[#F8F6F1] text-[#263029] rounded-bl-sm'
+                      ? 'bg-[#fef9f0] border border-[#C77A45]/20 text-[#26302A] rounded-bl-sm'
+                      : 'bg-[#F7F5EF] text-[#26302A] rounded-bl-sm'
                   }`}
                 >
                   {renderText(msg.text)}
@@ -162,11 +162,11 @@ export default function AIAssistant() {
             ))}
             {loading && (
               <div className="flex justify-start">
-                <div className="bg-[#F8F6F1] rounded-2xl rounded-bl-sm px-4 py-3">
+                <div className="bg-[#F7F5EF] rounded-2xl rounded-bl-sm px-4 py-3">
                   <div className="flex gap-1 items-center">
-                    <span className="w-1.5 h-1.5 bg-[#8FA58C] rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
-                    <span className="w-1.5 h-1.5 bg-[#8FA58C] rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
-                    <span className="w-1.5 h-1.5 bg-[#8FA58C] rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
+                    <span className="w-1.5 h-1.5 bg-[#91A38E] rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
+                    <span className="w-1.5 h-1.5 bg-[#91A38E] rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
+                    <span className="w-1.5 h-1.5 bg-[#91A38E] rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
                   </div>
                 </div>
               </div>
@@ -175,19 +175,19 @@ export default function AIAssistant() {
           </div>
 
           {/* Input */}
-          <div className="px-4 py-3 border-t border-[#EFE9DD] flex gap-2">
+          <div className="px-4 py-3 border-t border-[#EDE6D8] flex gap-2">
             <input
               type="text"
               value={input}
               onChange={e => setInput(e.target.value)}
               onKeyDown={handleKeyDown}
               placeholder="e.g. Something light for lunch…"
-              className="flex-1 text-sm px-4 py-2.5 rounded-full bg-[#F8F6F1] text-[#263029] placeholder-[#6F776F] border border-transparent focus:outline-none focus:border-[#8FA58C] transition-colors"
+              className="flex-1 text-sm px-4 py-2.5 rounded-full bg-[#F7F5EF] text-[#26302A] placeholder-[#707870] border border-transparent focus:outline-none focus:border-[#91A38E] transition-colors"
             />
             <button
               onClick={handleSend}
               disabled={!input.trim() || loading}
-              className="p-2.5 rounded-full bg-[#24352A] text-white disabled:opacity-40 hover:bg-[#1a2820] transition-colors"
+              className="p-2.5 rounded-full bg-[#26382C] text-white disabled:opacity-40 hover:bg-[#1c2a20] transition-colors"
             >
               <Send size={15} />
             </button>
