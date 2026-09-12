@@ -1,132 +1,92 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background: #F8F6F1;
-  --color-primary: #24352A;
-  --color-sage: #8FA58C;
-  --color-cream: #EFE9DD;
-  --color-accent: #C87941;
-  --color-white: #FFFFFF;
-  --color-text: #263029;
-  --color-muted: #6F776F;
+  --color-background: #F7F5EF;
+  --color-primary:    #26382C;
+  --color-sage:       #91A38E;
+  --color-cream:      #EDE6D8;
+  --color-accent:     #C77A45;
+  --color-white:      #FFFFFF;
+  --color-text:       #26302A;
+  --color-muted:      #707870;
 
-  --font-display: 'Playfair Display', Georgia, serif;
-  --font-body: 'Inter', system-ui, sans-serif;
+  --font-display: 'DM Serif Display', Georgia, serif;
+  --font-body:    'Inter', system-ui, sans-serif;
 }
 
 @layer base {
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-
-  html {
-    scroll-behavior: smooth;
-  }
-
-  body {
-    background-color: #F8F6F1;
-    color: #263029;
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html  { scroll-behavior: smooth; }
+  body  {
+    background-color: #F7F5EF;
+    color: #26302A;
     font-family: 'Inter', system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
   }
-
-  h1, h2, h3, h4 {
-    font-family: 'Playfair Display', Georgia, serif;
-  }
+  h1, h2, h3, h4 { font-family: 'DM Serif Display', Georgia, serif; }
 }
 
 @layer components {
+  /* ── Buttons ─────────────────────────────────────────────────────────── */
   .btn-primary {
-    @apply inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#24352A] text-white text-sm font-medium transition-all duration-200 hover:bg-[#1a2820] hover:shadow-lg hover:-translate-y-0.5;
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#26382C] text-white text-sm font-medium
+           transition-all duration-200 hover:bg-[#1c2a20] hover:shadow-lg hover:-translate-y-0.5;
   }
-
   .btn-outline {
-    @apply inline-flex items-center gap-2 px-6 py-3 rounded-full border border-[#24352A] text-[#24352A] text-sm font-medium transition-all duration-200 hover:bg-[#24352A] hover:text-white;
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-[#26382C] text-[#26382C] text-sm font-medium
+           transition-all duration-200 hover:bg-[#26382C] hover:text-white;
   }
-
   .btn-accent {
-    @apply inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#C87941] text-white text-sm font-medium transition-all duration-200 hover:bg-[#b36b35] hover:shadow-lg hover:-translate-y-0.5;
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#C77A45] text-white text-sm font-medium
+           transition-all duration-200 hover:bg-[#b06a38] hover:shadow-lg hover:-translate-y-0.5;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-xl text-[#707870] text-sm font-medium
+           transition-all duration-150 hover:text-[#26302A] hover:bg-[#EDE6D8];
   }
 
+  /* ── Cards ───────────────────────────────────────────────────────────── */
   .card {
-    @apply bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1;
+    @apply bg-white rounded-2xl overflow-hidden shadow-sm
+           hover:shadow-md transition-all duration-300 hover:-translate-y-1;
   }
 
+  /* ── Labels ──────────────────────────────────────────────────────────── */
   .section-label {
-    @apply text-xs font-semibold tracking-[0.15em] uppercase text-[#8FA58C];
+    @apply text-xs font-semibold tracking-[0.15em] uppercase text-[#91A38E];
   }
 
-  .tag {
-    @apply inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium;
-  }
-
-  .tag-plant {
-    @apply bg-[#eaf2ea] text-[#24352A];
-  }
-
-  .tag-fresh {
-    @apply bg-[#fef3e8] text-[#C87941];
-  }
-
-  .tag-nourish {
-    @apply bg-[#EFE9DD] text-[#6F776F];
-  }
-
-  .tag-protein {
-    @apply bg-[#e8f0ef] text-[#2a4a47];
-  }
+  /* ── Tags / pills (filters only) ────────────────────────────────────── */
+  .tag           { @apply inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium; }
+  .tag-plant     { @apply bg-[#e8f2e8] text-[#26382C]; }
+  .tag-fresh     { @apply bg-[#fef3e8] text-[#C77A45]; }
+  .tag-nourish   { @apply bg-[#EDE6D8] text-[#707870]; }
+  .tag-protein   { @apply bg-[#e6eeec] text-[#26382C]; }
 }
 
-/* Fonts loaded via index.html <link> for optimal performance */
+/* ── Fonts ───────────────────────────────────────────────────────────────── */
+/* Loaded via <link> in index.html */
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 6px;
-}
-::-webkit-scrollbar-track {
-  background: #F8F6F1;
-}
-::-webkit-scrollbar-thumb {
-  background: #8FA58C;
-  border-radius: 3px;
-}
+/* ── Scrollbar ───────────────────────────────────────────────────────────── */
+::-webkit-scrollbar       { width: 5px; }
+::-webkit-scrollbar-track { background: #F7F5EF; }
+::-webkit-scrollbar-thumb { background: #91A38E; border-radius: 3px; }
 
-/* Smooth image zoom on card hover */
-.food-card-img {
-  transition: transform 0.4s ease;
-}
-.food-card-img:hover {
-  transform: scale(1.03);
-}
-
-/* Typing animation */
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
-}
-.typing-cursor::after {
-  content: '|';
-  animation: blink 1s step-end infinite;
-}
-
-/* Fade-in-up for page loads */
+/* ── Animations ──────────────────────────────────────────────────────────── */
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
-.animate-fade-in-up {
-  animation: fadeInUp 0.6s ease forwards;
+.animate-fade-in-up           { animation: fadeInUp 0.55s ease forwards; }
+.animate-delay-100            { animation-delay: .1s; }
+.animate-delay-200            { animation-delay: .2s; }
+.animate-delay-300            { animation-delay: .3s; }
+
+/* ── Modal backdrop ──────────────────────────────────────────────────────── */
+.modal-backdrop {
+  position: fixed; inset: 0; z-index: 60;
+  background: rgba(38, 56, 44, 0.55);
+  backdrop-filter: blur(4px);
+  display: flex; align-items: center; justify-content: center;
+  padding: 1rem;
 }
-.animate-delay-100 { animation-delay: 0.1s; }
-.animate-delay-200 { animation-delay: 0.2s; }
-.animate-delay-300 { animation-delay: 0.3s; }
-.animate-delay-400 { animation-delay: 0.4s; }
