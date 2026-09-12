@@ -14,17 +14,22 @@ const BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
  * Get AI meal recommendations from the backend.
  * Falls back to local matching if backend is unreachable.
  */
-export async function getRecommendations({ mealTime, preference, priority, budget, freeText }) {
+export async function getRecommendations({ mealTime, preference, priority, priorities, budget, freeText }) {
+  // Normalise: use first of priorities array for backend (backend accepts single string)
+  const resolvedPriority = Array.isArray(priorities) && priorities.length > 0 && !priorities.includes('any')
+    ? priorities[0]
+    : (priority || null);
+
   try {
     const res = await fetch(`${BASE_URL}/api/recommend`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        meal_time: mealTime || null,
+        meal_time:  mealTime || null,
         preference: preference || null,
-        priority: priority || null,
-        budget: budget ?? 250,
-        free_text: freeText || null,
+        priority:   resolvedPriority,
+        budget:     budget ?? 250,
+        free_text:  freeText || null,
       }),
       signal: AbortSignal.timeout(5000),
     });
@@ -32,8 +37,8 @@ export async function getRecommendations({ mealTime, preference, priority, budge
     if (!res.ok) throw new Error(`API error ${res.status}`);
     return await res.json();
   } catch {
-    // Backend unavailable — use local fallback
-    return localRecommend({ mealTime, preference, priority, budget, freeText });
+    // Backend unavailable — local fallback supports full priorities array
+    return localRecommend({ mealTime, preference, priority: resolvedPriority, priorities, budget, freeText });
   }
 }
 

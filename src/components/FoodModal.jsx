@@ -251,7 +251,14 @@ export default function FoodModal({ item, onClose }) {
               <Link to="/meal-finder" onClick={onClose} className="btn-accent flex items-center gap-2">
                 <Bot size={14} /> Find similar options →
               </Link>
-              <button onClick={onClose} className="btn-outline">Close</button>
+              <Link
+                to={`/menu/${item.id}`}
+                onClick={onClose}
+                className="btn-outline flex items-center gap-2"
+              >
+                View full page →
+              </Link>
+              <button onClick={onClose} className="btn-ghost">Close</button>
             </div>
           </div>
         </motion.div>

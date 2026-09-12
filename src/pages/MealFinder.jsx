@@ -101,12 +101,16 @@ export default function MealFinder() {
   // ── submit ──────────────────────────────────────────────────────────────────
   async function handleFind() {
     setLoading(true);
-    // use first priority for the API (which accepts a single string), or 'any'
-    const priority = priorities.length === 0 ? 'any'
-      : priorities.includes('any') ? 'any'
-      : priorities[0];
     try {
-      const res = await getRecommendations({ mealTime, preference, priority, budget, freeText });
+      // fix #4 — pass full priorities array, not just first element
+      const res = await getRecommendations({
+        mealTime,
+        preference,
+        priorities,   // full array
+        priority: priorities.includes('any') || priorities.length === 0 ? 'any' : priorities[0],
+        budget,
+        freeText,
+      });
       setResult(res);
       setStep(4);
     } catch {

@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight, CheckCircle2, Leaf, Bot, ExternalLink } from 'lucide-react';
 import FoodCard from '../components/FoodCard';
 import FoodModal from '../components/FoodModal';
-import { menuItems } from '../data/menu';
+import { featuredItems } from '../data/menu';
 
 // ── animation helpers ────────────────────────────────────────────────────────
 const fadeUp = {
@@ -42,12 +42,10 @@ const problemCards = [
   },
 ];
 
-// 3 hero featured items
-const featured3 = [
-  menuItems.find(i => i.id === 'l1'),  // Rajma Rice Bowl
-  menuItems.find(i => i.id === 'l2'),  // Paneer Grain Bowl
-  menuItems.find(i => i.id === 'b3'),  // Curd & Fruit Bowl
-].filter(Boolean);
+// fix #5 — use the shared featuredItems export instead of hardcoded IDs
+// featuredItems = items where featured: true in menu.js (b2, b3, l1, l2, d5)
+// We show the first 3 to keep the section to exactly 3 cards as per spec
+const featured3 = featuredItems.slice(0, 3);
 
 const sources = [
   {

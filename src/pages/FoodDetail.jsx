@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { ArrowLeft, ChevronDown, ChevronUp, AlertCircle, Bot } from 'lucide-react';
 import { getMenuItemById, menuItems } from '../data/menu';
 import FoodCard from '../components/FoodCard';
+import FoodModal from '../components/FoodModal';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
@@ -128,6 +129,7 @@ export default function FoodDetail() {
   const item = getMenuItemById(id);
   const [ingredientsOpen, setIngredientsOpen] = useState(false);
   const [imgError, setImgError] = useState(false);
+  const [modalItem, setModalItem] = useState(null); // fix #1 — local modal state for related cards
 
   if (!item) {
     return (
@@ -149,6 +151,8 @@ export default function FoodDetail() {
 
   return (
     <main className="min-h-screen bg-[#F7F5EF] pt-16">
+      {/* modal for related cards */}
+      {modalItem && <FoodModal item={modalItem} onClose={() => setModalItem(null)} />}
       {/* Back */}
       <div className="max-w-7xl mx-auto px-6 py-6">
         <button
@@ -357,7 +361,7 @@ export default function FoodDetail() {
           </h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {related.map(rel => (
-              <FoodCard key={rel.id} item={rel} />
+              <FoodCard key={rel.id} item={rel} onOpenModal={setModalItem} />
             ))}
           </div>
         </section>

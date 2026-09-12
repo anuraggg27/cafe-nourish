@@ -21,7 +21,7 @@ const MEAL_TIME_MAP = {
   drink: 'Drinks',
 };
 
-export function localRecommend({ mealTime, preference, priority, budget, freeText }) {
+export function localRecommend({ mealTime, preference, priority, priorities, budget, freeText }) {
   // Safety gate
   if (freeText && MEDICAL_PATTERNS.some(re => re.test(freeText))) {
     return { type: 'safety', items: [], disclaimer: DISCLAIMER };
@@ -40,18 +40,29 @@ export function localRecommend({ mealTime, preference, priority, budget, freeTex
     items = items.filter(i => i.tags.includes(preference.toLowerCase()));
   }
 
-  // Filter by priority
-  if (priority && priority !== 'any') {
-    const priorityFiltered = items.filter(i => i.tags.includes(priority.toLowerCase()));
+  // fix #4 — support both a single priority string AND an array
+  // normalise to array, strip 'any', dedupe
+  const priorityList = [
+    ...(Array.isArray(priorities) ? priorities : []),
+    ...(priority && priority !== 'any' ? [priority] : []),
+  ].filter(p => p && p !== 'any');
+
+  if (priorityList.length > 0) {
+    // Items that match ALL selected priorities (intersection)
+    const allMatch = items.filter(i => priorityList.every(p => i.tags.includes(p.toLowerCase())));
+    // Fall back to ANY match if intersection is empty
+    const anyMatch = items.filter(i => priorityList.some(p => i.tags.includes(p.toLowerCase())));
+    const priorityFiltered = allMatch.length > 0 ? allMatch : anyMatch;
     if (priorityFiltered.length > 0) items = priorityFiltered;
   }
 
-  // Filter by budget
-  items = items.filter(i => i.price <= budget);
+  // Filter by budget (default 250 if undefined)
+  const maxBudget = budget ?? 250;
+  items = items.filter(i => i.price <= maxBudget);
 
   // Fallback
   if (items.length === 0) {
-    const fallback = menuItems.filter(i => i.price <= budget);
+    const fallback = menuItems.filter(i => i.price <= maxBudget);
     return {
       type: 'relaxed',
       items: (fallback.length ? fallback : menuItems).slice(0, 4),
